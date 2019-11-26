@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+<!-- definition of simple elements -->
+<xs:element name="name" type="xs:string"/>
+<xs:element name="type" type="xs:string"/>
+<xs:element name="size" type="xs:string"/>
+<xs:element name="challengeLevel" type="xs:string"/>
+<xs:element name="exp" type="xs:positiveInteger"/>
+<xs:element name="hitPoints" type="xs:positiveInteger"/>
+<xs:element name="armorClass" type="xs:positiveInteger"/>
+<xs:element name="str" type="xs:positiveInteger"/>
+<xs:element name="dex" type="xs:positiveInteger"/>
+<xs:element name="con" type="xs:positiveInteger"/>
+<xs:element name="int" type="xs:positiveInteger"/>
+<xs:element name="wis" type="xs:positiveInteger"/>
+<xs:element name="cha" type="xs:positiveInteger"/>
+
+<!-- definition of attributes -->
+<xs:attribute name="id" type="xs:positiveInteger"/>
+
+<!-- definition of complex elements -->
+<xs:element name="monster">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element ref="name" />
+      <xs:element ref="type" />
+      <xs:element ref="size" />
+      <xs:element ref="challengeLevel" />
+      <xs:element ref="exp" />
+      <xs:element ref="status" />
+    </xs:sequence>
+  <xs:attribute ref="id" use="required"/>
+  </xs:complexType>
+</xs:element>
+
+<xs:element name="status">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element ref="hitPoints" />
+      <xs:element ref="armorClass" />
+      <xs:element ref="str" />
+      <xs:element ref="dex" />
+      <xs:element ref="con" />
+      <xs:element ref="int" />
+      <xs:element ref="wis" />
+      <xs:element ref="cha" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+
+</xs:schema>

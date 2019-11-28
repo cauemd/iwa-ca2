@@ -11,6 +11,8 @@ body {
   /* Margin bottom by footer height */
   margin-bottom: 60px;
   background-image: url("../img/redDragon.jpeg");
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .footer {

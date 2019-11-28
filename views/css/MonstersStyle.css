@@ -2,10 +2,17 @@ html {
   position: relative;
   min-height: 100%;
 }
+
+img{
+  opacity: 0.2;
+}
+
 body {
   /* Margin bottom by footer height */
   margin-bottom: 60px;
+  background-image: url("../img/redDragon.jpeg");
 }
+
 .footer {
   position: absolute;
   bottom: 0;

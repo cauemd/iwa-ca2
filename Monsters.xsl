@@ -18,12 +18,12 @@
                     </thead>
                     <tbody>
                         <xsl:for-each select="/rpgMonsters/monster">
-                            <tr>
+                            <tr id="nameRow">
                                 <td colspan="6" align="center">
                                     <xsl:value-of select="name" />
                                 </td>
                             </tr>
-                            <tr>
+                            <tr  id="statusRow">
                                 <td align="center">
                                     <input name="item0" type="checkbox" />
                                 </td>

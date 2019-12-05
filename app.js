@@ -1,13 +1,25 @@
+/*This code was mostly based on https://github.com/mikhail-cct/CA1-In-class-Demo
+*
+*This code was adapted to match the xml, xsl and xsd that was created by me.
+*The method that validades the forms from the html is also original.
+*/
+
 var http = require('http'),
     path = require('path'),
     express = require('express'),
     fs = require('fs'),
+    expAutoSan = require('express-autosanitizer'),
     xmlParse = require('xslt-processor').xmlParse,
     xsltProcess = require('xslt-processor').xsltProcess,
     xml2js = require('xml2js');
+   
+//Sanitization process copied from Antonio Ramirez
+//https://medium.com/@antonioramirezofficial/automatic-and-painless-sanitization-for-all-express-routes-ae24cbe653c8
 
 var router = express();
 var server = http.createServer(router);
+
+router.use(expAutoSan.allUnsafe);
 
 router.use(express.static(path.resolve(__dirname, 'views')));
 router.use(express.urlencoded({extended: true}));
@@ -77,7 +89,7 @@ router.post('/post/json', function(req, res) {
 
 });
 
-server.listen(process.env.PORT || 3000, process.env.IP || "0.0.0.0", function() {
+server.listen(process.env.PORT || 3002, process.env.IP || "0.0.0.0", function() {
   var addr = server.address();
   console.log("Server listening at", addr.address + ":" + addr.port);
 });

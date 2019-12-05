@@ -25,7 +25,7 @@
                             </tr>
                             <tr  id="statusRow">
                                 <td align="center">
-                                    <input name="item0" type="checkbox" />
+                                    <input id="{position()}" name="delete" type="button" value="Delete" onclick="select_row()"/>
                                 </td>
                                 <td>
                                     <xsl:value-of select="type" />

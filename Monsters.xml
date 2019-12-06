@@ -1,12 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <rpgMonsters xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="game.xsd">
-  <monster id="1">
-    <name>Aboleth</name>
-    <type>Aberration</type>
-    <size>Large</size>
-    <challengeLevel>10</challengeLevel>
-    <exp>5900</exp>
-  </monster>
   <monster id="2">
     <name>Acolyte</name>
     <type>Humanoid</type>
@@ -188,5 +181,12 @@
     <size>Monstrosity</size>
     <challengeLevel>30</challengeLevel>
     <exp>155000</exp>
+  </monster>
+  <monster>
+    <name>Aboleth</name>
+    <type>Aberration</type>
+    <size>Large</size>
+    <challengerLevel/>
+    <exp>5900</exp>
   </monster>
 </rpgMonsters>

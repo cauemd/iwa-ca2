@@ -9,7 +9,7 @@
                             <th colspan="5">Monster List</th>
                         </tr>
                         <tr>
-                            <th>Select</th>
+                            <th>Delete</th>
                             <th>Type</th>
                             <th>Size</th>
                             <th>Challenger Lvl</th>
@@ -25,7 +25,7 @@
                             </tr>
                             <tr  id="statusRow">
                                 <td align="center">
-                                    <input id="{position()}" name="delete" type="button" value="Delete" onclick="select_row()"/>
+                                    <input id="{position()}" name="delete" type="button" value="Delete" onclick="select_row({position()})"/>
                                 </td>
                                 <td>
                                     <xsl:value-of select="type" />

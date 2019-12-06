@@ -14,21 +14,17 @@ function draw_table(){
     $.getJSONuncached("/get/html")
 }
 
-function select_row()
+function select_row(id)
 {
-	$("#menuTable tbody tr[id]").click(function ()
-	{
-		$(".selected").removeClass("selected");
-		$(this).addClass("selected");
-		var entree = $(this).attr("id") - 1;
+	
+        var entree = id - 1;
+        console.log(entree);
 		delete_row(entree);
-	})
+	
 };
 
 function delete_row(mon)
 {
-	$("#delete").click(function ()
-	{
 		$.ajax(
 		{
 			url: "/post/delete",
@@ -40,7 +36,7 @@ function delete_row(mon)
 			cache: false,
 			success: setTimeout(draw_table, 1000)
 		})
-	})
+	
 };
 
 $(document).ready(function(){

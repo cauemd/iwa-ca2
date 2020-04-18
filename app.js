@@ -17,7 +17,7 @@ var port = process.env.PORT || 3000;
 var monsterCtrl = require('./monster-controller');
 
 //using auto-sanitizer to treat all data from the forms in the front end
-app.use(expAutoSan.allUnsafe);
+//app.use(expAutoSan.allUnsafe);
 
 //Making our Express server use morgan to log things in the console
 app.use(logger('dev'));
@@ -29,9 +29,9 @@ app.listen(port, function(err){
     console.log("Listening on Port: " + port)
 });
 
-//creating our connection to the mongoDB in Atlas cloud. Environmental variables must be used instead, so the authentication keys to the
+// creating our connection to the mongoDB in Atlas cloud. Environmental variables must be used instead, so the authentication keys to the
 //database are not visible in our file
-mongoose.connect('mongodb://localhost/test');
+mongoose.connect('mongodb+srv://myUser:yh1DaSDCWT3dvoe8@cluster0-wzrhk.mongodb.net/test?retryWrites=true&w=majority');
 mongoose.connection.on('error', (err) => { 
     console.log('Mongodb Error: ', err); 
     process.exit();

@@ -1,13 +1,13 @@
 //getting dependencies
 var express = require('express'),
     router = express.Router(),
-    userCtrl = require('./monster-controller');
+    monsterCtrl = require('./monster-controller.js');
 
 //creating HTTP paths for the API
-router.post('/monsters', userCtrl.createUser);
-router.get('/monsters', userCtrl.getUsers);
-router.get('/monsters/:id', userCtrl.getUser);
-router.delete('/monsters/:id', userCtrl.deleteUser);
-router.put('/monsters/:id', userCtrl.updateUser);
+router.post('/monsters', monsterCtrl.createMonster);
+router.get('/monsters', monsterCtrl.getMonsters);
+router.get('/monsters/:id', monsterCtrl.getMonster);
+router.delete('/monsters/:id', monsterCtrl.deleteMonster);
+router.put('/monsters/:id', monsterCtrl.updateMonster);
 
 module.exports = router;

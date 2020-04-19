@@ -1,0 +1,20 @@
+<html>
+<head><script src= "jquery/jquery.js"></script></head>
+<body>
+    <p id="para">Hello world</p>
+<script>
+    function loadDoc() {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (!xhttp.readyState == 4 && !xhttp.status == 200) {
+            console.log(this.responseText);
+            console.log("Confimado?")
+       }
+    };
+    xhttp.open("GET", "https://3000-d0513224-3d63-47ec-a30f-e929c372918f.ws-eu01.gitpod.io/monsters", true);
+    xhttp.send();
+}
+loadDoc();
+</script>
+    
+</body>

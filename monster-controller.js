@@ -12,11 +12,12 @@ exports.createMonster = function(req, res) {
 };
 
 exports.getMonsters = function(req, res) {
-   Monster.find({}, function (err, users) {
+   Monster.find({}, function (err, monsters) {
     if (err) {
       res.status(400).json(err); 
     } 
-    res.json(users);
+    console.log(monsters);
+    res.json(monsters);
   }); 
 };
 

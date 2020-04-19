@@ -16,7 +16,6 @@ exports.getMonsters = function(req, res) {
     if (err) {
       res.status(400).json(err); 
     } 
-    console.log(monsters);
     res.json(monsters);
   }); 
 };

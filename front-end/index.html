@@ -40,12 +40,70 @@
 
     <!--Page Content!-->    
     <div class = "container">
+        <!--Top text-->
         <div class="row">
-        <div class="col-lg-12 text-center">
-            <h1 class="mt-5">Dungeon and Dragons Monster List</h1>
-            <p class="lead">A list with a couple of memorable D&D monsters</p>
+            <div class="col-lg-12 text-center">
+                <h1 class="mt-5">Dungeon and Dragons Monster List</h1>
+                <p class="lead">A list with a couple of memorable D&D monsters</p>
+            </div>
         </div>
-        <div id="results" class="col-lg-12"></div>
+
+        <!--Row with table and forms-->
+        <div class="row">
+
+            <!--Forms-->
+            <div class="col-lg-4 text-center">
+                <form>
+                    <!--Name Field-->
+                    <div class="form-group">
+                        <label for="nameInput">Monster Name</label>
+                        <input type="text" class="form-control" id="nameInput" placeholder="Enter Monster Name">
+                    </div>
+                    <!--Size ComboBox-->
+                    <div class="form-group">
+                        <label for="sizeInput">Size:</label>
+                        <select class="form-control" id="sizeInput">
+                            <option>Tiny</option>
+                            <option>Small</option>
+                            <option>Medium</option>
+                            <option>Large</option>
+                            <option>Huge</option>
+                            <option>Gargantuan</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="typeInput">Monster Type:</label>
+                        <select class="form-control" id="typeInput">
+                            <option>Aberration</option>
+                            <option>Beast</option>
+                            <option>Celestial</option>
+                            <option>Dragon</option>
+                            <option>Fiend</option>
+                            <option>Giant</option>
+                            <option>Humanoid</option>
+                            <option>Undead</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Add New Monster</button>
+                </form>
+            </div>
+
+            <!--Table-->
+            <div id="monsterTable" class="col-lg-8">
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">Name</th>
+                            <th scope="col">Size</th>
+                            <th scope="col">Type</th>
+                        </tr>
+                    </thead>
+
+                    <!--Data from the API goes here-->
+                    <tbody id="monsterData">  </tbody>
+                </table>
+            </div>
         </div>
     </div>
 
@@ -53,7 +111,9 @@
     <footer class="footer">
       <div class="container">
         <span class="text-muted" style="float:left;">Made by Cauê Meireles Duarte, 2020.</span>
-        <span class= "text-muted" style="float:right;">Icons made by <a href="https://www.flaticon.com/authors/flat-icons" title="Flat Icons">Flat Icons</a> from 
+        <!-- Giving credit were is due-->
+        <span class= "text-muted" style="float:right;">Icons made by <a href="https://www.flaticon.com/authors/flat-icons" title="Flat Icons">Flat Icons</a>, 
+             <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a> from 
             <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></span>
       </div>
     </footer>

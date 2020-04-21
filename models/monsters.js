@@ -5,8 +5,7 @@ var mongoose = require('mongoose');
 var monsterSchema = new mongoose.Schema({ 
     name: { type: String, unique: true, lowercase: false},
     type: { type: String, lowercase: true},
-    size: String,
-    challengerLvl: Number
+    size: String
 });
 
 module.exports = mongoose.model('monster', monsterSchema);

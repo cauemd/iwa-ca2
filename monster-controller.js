@@ -1,5 +1,6 @@
 var Monster = require("./models/monsters.js")
 
+//creating a new monster in the database
 exports.createMonster = function(req, res) { 
     var newMonster = new Monster(req.body);
     newMonster.save(function (err, user) { 
@@ -11,6 +12,7 @@ exports.createMonster = function(req, res) {
 });
 };
 
+//getting the data of all monsters in the database
 exports.getMonsters = function(req, res) {
    Monster.find({}, function (err, monsters) {
     if (err) {
@@ -20,6 +22,7 @@ exports.getMonsters = function(req, res) {
   }); 
 };
 
+//getting the data of a single monster in the database
 exports.getMonster = function(req, res) {
   Monster.findOne({_id: req.params.name}, function (err, user) {
     if (err) {
@@ -29,6 +32,7 @@ exports.getMonster = function(req, res) {
   }); 
 };
 
+//Updating the data of on monster in the database
 exports.updateMonster = function(req, res) {
   Monster.findOneAndUpdate({_id: req.params.name}, req.body, {new: true},function (err, user) {
     if (err) {
@@ -38,6 +42,7 @@ exports.updateMonster = function(req, res) {
   }); 
 };
 
+//deleting a monster from the database
 exports.deleteMonster = function(req, res) {
   Monster.findByIdAndRemove(req.params.name, function (err, user) {
     if (err) {

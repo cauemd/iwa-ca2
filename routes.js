@@ -7,7 +7,7 @@ var express = require('express'),
 router.post('/monsters', monsterCtrl.createMonster);
 router.get('/monsters', monsterCtrl.getMonsters);
 router.get('/monsters/:id', monsterCtrl.getMonster);
-router.delete('/monsters/:id', monsterCtrl.deleteMonster);
+router.delete('/monsters/:name', monsterCtrl.deleteMonster);
 router.put('/monsters/:id', monsterCtrl.updateMonster);
 
 module.exports = router;

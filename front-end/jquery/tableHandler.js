@@ -15,9 +15,9 @@ function draw_table(data){
     //iterating through the json and appending the data to the table
     for(let i = 0; i < data.length; i++){
         $("tbody[id=monsterData]")
-            .append(" <tr><th scope=\"row\">" + data[i].name + 
-                    "</th><td>" + data[i].size +
-                    "</td><td> <img src=\"img/" + data[i].type + ".png\" title=\"" + 
+            .append(" <tr><td scope=\"row\">" + data[i].name + "</td>" + 
+                    "<td>" + data[i].size + "</td>" +
+                    "<td> <img src=\"img/" + data[i].type + ".png\" title=\"" + 
                     data[i].type.charAt(0).toUpperCase() + data[i].type.slice(1) +   "\" height=\"32\" width=\"32\"></td></tr>");
     }
     

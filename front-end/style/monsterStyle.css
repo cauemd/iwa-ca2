@@ -7,6 +7,10 @@
   background-color: #f5f5f5;
 }
 
+tr:hover{
+    background-color: #d7eaf0f5
+}
+
 #errorMsg{
     color:red;
 }

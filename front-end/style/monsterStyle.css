@@ -1,5 +1,9 @@
-.footer {
+body{
+    background-image: linear-gradient(to bottom right, rgb(221, 223, 222),rgba(195, 148, 255, 0.452) );
+    height: 100%;
+}
 
+.footer {
   width: 100%;
   /* Set the fixed height of the footer here */
   height: 60px;
@@ -8,9 +12,10 @@
 }
 
 tr:hover{
-    background-color: #d7eaf0f5
+    background-color: #a7a7a78a;
 }
 
-#errorMsg{
+.errorLbl{
     color:red;
+    text-align: center;
 }

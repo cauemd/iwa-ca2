@@ -6,8 +6,8 @@ var express = require('express'),
 //creating HTTP paths for the API
 router.post('/monsters', monsterCtrl.createMonster);
 router.get('/monsters', monsterCtrl.getMonsters);
-router.get('/monsters/:id', monsterCtrl.getMonster);
+router.get('/monsters/:name', monsterCtrl.getMonster);
 router.delete('/monsters/:name', monsterCtrl.deleteMonster);
-router.put('/monsters/:id', monsterCtrl.updateMonster);
+router.put('/monsters/:name', monsterCtrl.updateMonster);
 
 module.exports = router;

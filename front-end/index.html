@@ -16,166 +16,161 @@
     <!-- Navigation Bar with a couple of relevant links -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
         <div class="container">
-        <a class="navbar-brand" href="#">D&D Monsters</a>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="#">Home
-                <span class="sr-only">(current)</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="https://github.com/cauemd/iwa-ca2">Project Repository</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="https://www.linkedin.com/in/cauemd/">LinkedIn</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="https://www.cct.ie/">CCT</a>
-            </li>
-            </ul>
-        </div>
+            <a class="navbar-brand" href="#">D&D Monsters</a>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home
+                    <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://github.com/cauemd/iwa-ca2" target="_blank">Project Repository</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://www.linkedin.com/in/cauemd/" target="_blank">LinkedIn</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://www.cct.ie/" target="_blank">CCT</a>
+                </li>
+                </ul>
+            </div>
         </div>
     </nav>
 
     <!--Page Content!-->    
     <div class = "container">
-        <!--Top text-->
-        <div class="row">
-            <div class="col-lg-12 text-center">
-                <h1 class="mt-5">Dungeon and Dragons Monster List</h1>
-                <p class="lead">A list with a couple of memorable D&D monsters!</p>
-                <p>Click on the table row for interaction (delete and update).</p>
-            </div>
-        </div>
-
-        <!--Row with table and forms-->
-        <div class="row">
-
-            <!--Forms-->
-            <div class="col-lg-4 col-sm 12 col-xs-12 text-center">
-                <form>
-                    <!--Name Field-->
-                    <div class="form-group">
-                        <label for="nameInput">Monster Name</label>
-                        <input type="text" class="form-control" id="nameInput" placeholder="Enter Monster Name">
-                    </div>
-                    <!--Size ComboBox-->
-                    <div class="form-group">
-                        <label for="sizeInput">Size:</label>
-                        <select class="form-control" id="sizeInput">
-                            <option>Tiny</option>
-                            <option>Small</option>
-                            <option>Medium</option>
-                            <option>Large</option>
-                            <option>Huge</option>
-                            <option>Gargantuan</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="typeInput">Monster Type:</label>
-                        <select class="form-control" id="typeInput">
-                            <option>Aberration</option>
-                            <option>Beast</option>
-                            <option>Celestial</option>
-                            <option>Dragon</option>
-                            <option>Fiend</option>
-                            <option>Giant</option>
-                            <option>Humanoid</option>
-                            <option>Undead</option>
-                        </select>
-                    </div>
-
-                    <button type="button" id="#submitBtn" onclick = "addMonster()" class="btn btn-primary">Add New Monster</button>
-                    </form>
-                <strong id="errorMsg" hidden>Please, insert a name.</strong>
-            </div>
-
-            <!--Table-->
-            <div id="monsterTable" class="col-lg-8 col-sm 12 col-xs-12">
-                <table class="table">
-                    <thead class="thead-dark">
-                        <tr>
-                            <th scope="col">Name</th>
-                            <th scope="col">Size</th>
-                            <th scope="col">Type</th>
-                        </tr>
-                    </thead>
-
-                    <!--Data from the API goes here-->
-                    <tbody id="monsterData">  </tbody>
-                </table>
-            </div>
-        </div>
-
-        <!--Modal for update and delete-->
-        <div class="modal fade" id="monsterModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="modalLabel"> Monster Name Goes Here</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <form>
-                            <!--Name Field-->
-                            <div class="form-group">
-                                <label for="nameInput">Monster Name</label>
-                                <input type="text" class="form-control" id="nameModal" placeholder="Enter New Name">
-                            </div>
-                            <!--Size ComboBox-->
-                            <div class="form-group">
-                                <label for="sizeInput">Size:</label>
-                                <select class="form-control" id="sizeModal">
-                                    <option>Tiny</option>
-                                    <option>Small</option>
-                                    <option>Medium</option>
-                                    <option>Large</option>
-                                    <option>Huge</option>
-                                    <option>Gargantuan</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="typeInput">Monster Type:</label>
-                                <select class="form-control" id="typeModal">
-                                    <option>Aberration</option>
-                                    <option>Beast</option>
-                                    <option>Celestial</option>
-                                    <option>Dragon</option>
-                                    <option>Fiend</option>
-                                    <option>Giant</option>
-                                    <option>Humanoid</option>
-                                    <option>Undead</option>
-                                </select>
-                            </div>
-                        </form>
-                        <strong id="errorMsg" hidden>Please, insert a name.</strong>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" onclick = "deletingMonster()" data-dismiss="modal">Delete Monster</button>
-                        <button type="button" class="btn btn-primary" onclick = "updatingMonster()" data-dismiss="modal">Save changes</button>
-                    </div>
+            <!--Top text-->
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h1 class="mt-5">Dungeon and Dragons Monster List</h1>
+                    <p class="lead">A list with a couple of memorable D&D monsters!</p>
+                    <p>Click on the table row for interaction (delete and update).</p>
                 </div>
             </div>
-        </div>
+
+            <!--Row with table and forms-->
+            <div class="row">
+
+                <!--Forms-->
+                <div class="col-lg-4 col-sm 12 col-xs-12 text-center">
+                    <form>
+                        <!--Name Field-->
+                        <div class="form-group">
+                            <label for="nameInput">Monster Name</label>
+                            <input type="text" class="form-control" id="nameInput" placeholder="Enter Monster Name">
+                        </div>
+                        <!--Size ComboBox-->
+                        <div class="form-group">
+                            <label for="sizeInput">Monster Size</label>
+                            <select class="form-control" id="sizeInput">
+                                <option>Tiny</option>
+                                <option>Small</option>
+                                <option>Medium</option>
+                                <option>Large</option>
+                                <option>Huge</option>
+                                <option>Gargantuan</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="typeInput">Monster Type:</label>
+                            <select class="form-control" id="typeInput">
+                                <option>Aberration</option>
+                                <option>Beast</option>
+                                <option>Celestial</option>
+                                <option>Dragon</option>
+                                <option>Fiend</option>
+                                <option>Giant</option>
+                                <option>Humanoid</option>
+                                <option>Undead</option>
+                            </select>
+                        </div>
+
+                        <button type="button" id="#submitBtn" onclick = "addMonster()" class="btn btn-primary">Add New Monster</button>
+                        </form>
+                    <strong id="errorMsg" class = "errorLbl" hidden>Please, insert a name.</strong>
+                </div>
+
+                <!--Table-->
+                <div id="monsterTable" class="col-lg-8 col-sm 12 col-xs-12">
+                    <table class="table">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">Name</th>
+                                <th scope="col">Size</th>
+                                <th scope="col">Type</th>
+                            </tr>
+                        </thead>
+
+                        <!--Data from the API goes here-->
+                        <tbody id="monsterData">  </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!--Modal for update and delete-->
+            <div class="modal fade" id="monsterModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="modalLabel"> Monster Name Goes Here</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <!--Size ComboBox-->
+                                <div class="form-group">
+                                    <label for="sizeModal">Size:</label>
+                                    <select class="form-control" id="sizeModal">
+                                        <option>Tiny</option>
+                                        <option>Small</option>
+                                        <option>Medium</option>
+                                        <option>Large</option>
+                                        <option>Huge</option>
+                                        <option>Gargantuan</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="typeModal">Monster Type:</label>
+                                    <select class="form-control" id="typeModal">
+                                        <option>Aberration</option>
+                                        <option>Beast</option>
+                                        <option>Celestial</option>
+                                        <option>Dragon</option>
+                                        <option>Fiend</option>
+                                        <option>Giant</option>
+                                        <option>Humanoid</option>
+                                        <option>Undead</option>
+                                    </select>
+                                </div>
+                            </form>
+                            <strong id="modalError" class = "errorLbl" hidden>Please, insert a name.</strong>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" onclick = "deletingMonster()" data-dismiss="modal">Delete Monster</button>
+                            <button type="button" class="btn btn-primary" onclick = "updatingMonster()">Save changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div> 
     </div>
 
     <!--Footer of the page-->
-    <footer class="footer">
-      <div class="container">
+    <footer id="footer" class="footer">
+        <div class="container text-center">
         <span class="text-muted" style="float:left;">Made by Cauê Meireles Duarte, 2020.</span>
-        <!-- Giving credit were is due-->
-        <span class= "text-muted" style="float:right;">Icons made by <a href="https://www.flaticon.com/authors/flat-icons" title="Flat Icons">Flat Icons</a>, 
-             <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a> from 
-            <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></span>
-      </div>
+            <!-- Giving credit were is due-->
+            <span class= "text-muted" style="float:right;">Icons made by <a href="https://www.flaticon.com/authors/flat-icons" title="Flat Icons">Flat Icons</a>, 
+                <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a> from 
+                <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></span>
+        </div>
     </footer>
-
+ 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="bootstrap-scripts/bootstrap.min.js"></script>
     <script src= "jquery/tableHandler.js"></script>
-    <script src= "jquery/tableRowHandler.js"></script>
+    <script src= "jquery/modalHandler.js"></script>
     <script src= "jquery/formHandler.js"></script>
 </body>

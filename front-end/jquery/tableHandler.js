@@ -12,6 +12,15 @@ function draw_table(data){
     //emptying the table
     $("tbody[id=monsterData]").empty();
 
+    //sorting the data by monster name
+    data.sort((a,b) => {
+        if(a.name > b.name){
+            return 1;
+        } else {
+            return -1;
+        }
+    });
+
     //iterating through the json and appending the data to the table
     for(let i = 0; i < data.length; i++){
         $("tbody[id=monsterData]")
@@ -23,5 +32,12 @@ function draw_table(data){
     
     
 };
+
+//Callback that sets modal title with tr data and toggles it
+$("tbody[id=monsterData]").on("click", "tr", function() {
+   let name = $(this).find("td:nth-child(1)").text();
+   $("#modalLabel").text(name);
+   $("#monsterModal").modal('toggle')
+});
 
 fetchingAllMonsterData();

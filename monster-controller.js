@@ -34,7 +34,7 @@ exports.getMonster = function(req, res) {
 
 //Updating the data of on monster in the database
 exports.updateMonster = function(req, res) {
-  Monster.findOneAndUpdate({name: req.params.name}, req.body, {new: true},function (err, user) {
+  Monster.findOneAndUpdate({name: req.body.name}, req.body, {new: true},function (err, user) {
     if (err) {
       res.status(400).json(err);
     } 
@@ -44,10 +44,11 @@ exports.updateMonster = function(req, res) {
 
 //deleting a monster from the database
 exports.deleteMonster = function(req, res) {
-  Monster.findOneAndRemove(req.params.name, function (err, user) {
-    if (err) {
-      res.status(400).json(err);
-    } 
-    res.json(user);
-  }); 
+    //console.log(typeof(req.params.name));
+    Monster.findOneAndRemove({name:req.params.name}, function (err, user) {
+        if (err) {
+            res.status(400).json(err);
+        } 
+        res.json(user);
+    }); 
 };

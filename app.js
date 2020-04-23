@@ -45,7 +45,7 @@ app.listen(port, function (err) {
 
 // creating our connection to the mongoDB in Atlas cloud. Environmental variables must be used instead, so the authentication keys to the
 //database are not visible in our file
-mongoose.connect('mongodb+srv://myUser:yh1DaSDCWT3dvoe8@cluster0-wzrhk.mongodb.net/test?retryWrites=true&w=majority');
+mongoose.connect('mongodb+srv://myUser:yh1DaSDCWT3dvoe8@cluster0-wzrhk.mongodb.net/test?retryWrites=true&w=majority', { useFindAndModify: false });
 mongoose.connection.on('error', (err) => {
     console.log('Mongodb Error: ', err);
     process.exit();
